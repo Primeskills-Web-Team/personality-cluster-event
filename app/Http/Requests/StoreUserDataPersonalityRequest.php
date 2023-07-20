@@ -26,7 +26,7 @@ class StoreUserDataPersonalityRequest extends FormRequest
         return [
             "name" => 'required|string',
             "gender" => 'required|string|in:male,female',
-            "email" => 'required|string|email|unique:users,email',
+            "email" => 'required|string|email',
             "personality" => 'required|string',
         ];
     }
