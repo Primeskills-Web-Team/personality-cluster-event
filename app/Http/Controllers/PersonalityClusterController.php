@@ -26,4 +26,9 @@ class PersonalityClusterController extends Controller
         return $this->personalityClusterService->saveDataUser($storeUserDataPersonalityRequest);
     }
 
+    public function statisticAllData(): JsonResponse
+    {
+        return $this->personalityClusterService->statisticDataAll();
+    }
+
 }

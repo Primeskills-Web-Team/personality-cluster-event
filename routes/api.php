@@ -23,3 +23,4 @@ Route::get("/", function () {
 });
 
 Route::post("/personality-cluster", [PersonalityClusterController::class, 'store'])->name('personality-user-store');
+Route::get("/personality-cluster/statistic", [PersonalityClusterController::class, 'statisticAllData'])->name('personality-user-statistic');

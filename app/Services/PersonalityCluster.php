@@ -8,4 +8,6 @@ use Illuminate\Http\JsonResponse;
 interface PersonalityCluster
 {
     function saveDataUser(StoreUserDataPersonalityRequest $storeUserDataPersonalityRequest): JsonResponse;
+
+    function statisticDataAll(): JsonResponse;
 }
