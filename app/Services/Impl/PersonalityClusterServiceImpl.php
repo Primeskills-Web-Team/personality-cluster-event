@@ -4,6 +4,7 @@ namespace App\Services\Impl;
 
 use App\Http\Requests\StoreUserDataPersonalityRequest;
 use App\Models\Question;
+use App\Models\QuestionUser;
 use App\Models\User;
 use App\Services\PersonalityCluster;
 use Exception;
@@ -31,10 +32,10 @@ class PersonalityClusterServiceImpl implements PersonalityCluster
             $user->save();
 
             foreach ($storeUserDataPersonalityRequest->scores as $score) {
-                $scoreUser = new Question();
+                $scoreUser = new QuestionUser();
                 $scoreUser->user_id = $user->id;
-                $scoreUser->question_id = $score->question_id;
-                $scoreUser->score = $score->score;
+                $scoreUser->question_id = $score['question_id'];
+                $scoreUser->score = $score['score'];
                 $scoreUser->save();
             }
 
